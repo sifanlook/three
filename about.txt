@@ -1,0 +1,53 @@
+github.com是一个网站，它为你提供一个远程版本库（你和你的协作者的工作成果最终提交在这里）；
+同时它也是一个共享平台，你可以在这里找到数不尽的源码。
+一.使用步骤：
+mysygit shell 控制台
+1.绑定你的github帐户和邮件
+git config --global user.name "yourname"  
+git config --global user.email "youreami@xx.xxx" 
+
+2.设置SSH（SSH是一种连接方式，提供两段很长的字符串，一方面免于你总是在连接时输入用户和密码，另一方面增加安全性）
+生成ssh文件
+ssh-keygen -t rsa -C  your_email@youremail.com	
+进入www.GitHub.com里面的SSH key 把生成的id_rsa.pub的内容复制到Key中
+
+3.测试是否成功
+ssh -T git@github.com 如果成功，会显示欢迎字符
+
+4.建立本地库
+新建文件夹，目录名与在github上所建库的名字相同。然后右击文件夹，在弹出菜单中选择git bash ，弹出命令行窗口，输入：git init。此时git会在这个文件夹下创建一个隐藏目录，这个目录就是本地库了。，而这个Hello目录，实际上就是你的工作路径。
+（也可用git clone git@github.com:sifanlook/three.git）克隆Github网站上的库到本地
+
+5、绑定本地库和远程库
+git remote add origin git@github.com:sifanlook/three.git
+
+
+Git的一些常用命令
+下载GitHub上的内容
+git pull origin master(无更新提示already update)
+
+上传一个文件
+git add XXX.java
+git commit -m"sifan have update"
+git push origin master
+
+上传所有文件
+git status(检查有哪些内容变化了)
+git commit -a -m"sifan update all"
+git push origin master
+
+9、克隆别人的库
+   第一步：
+  首先在网站上进入别人的库（通过别人提供的链接或者自己在页面上查询），然后在右下方选择SSH，如图：
+将链接复制下来。
+第二步，在你的电脑上新建一个与人家库名相同的文件夹，然后在文件夹上右击，在弹出菜单上选git bash，
+打开命令行，输入git init，初始化库，然后输入git remote add origin ,右击命令行窗口标题栏，
+在弹出菜单上选“编辑”->"粘贴"，回车，就建立了联系。
+第三步，输入git clone，就等着它帮你下完吧。
+注意：如果对方未授权，你是无法push的。你自己的库也可以授权给别人，在你的库页面右方有个setting，你可以进行设置collabtories（协作者）。
+
+eclipse 中 使用git
+ 
+教程懒得写了 直接百度贴出来了：
+http://jiangli.easymorse.com/?p=783
+http://www.cnblogs.com/terrylin/archive/2012/05/22/2513320.html
